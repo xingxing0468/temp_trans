@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shops>
+    
+
+<shop id="0">
+    <shopName>大光明电影院</shopName>
+    <latitude>31.23311</latitude>
+    <longitude>121.47129</longitude>
+    <inCity>上海</inCity>
+    <inDistrict>黄浦</inDistrict>
+    <address>黄浦区南京西路216号(黄河路南京西路)</address>
+    <telNum_1>021-63274260</telNum_1>
+    <telNum_2>021-63274260</telNum_2>
+    <shopImgName>daguangming.jpg</shopImgName>
+    <shopDetailInfo>大光明电影院，享有“远东第一影院”的盛名，它始建于1928年，1933年，由著名的匈牙利建筑师邬达克设计重建。大光明电影院是亚洲第一座宽银幕电影院和亚洲第一座立体声电影院。
+    </shopDetailInfo>
+</shop>
+    
+<shop id="1">
+    <shopName>西提牛排天钥桥店</shopName>
+    <latitude>31.1905</latitude>
+    <longitude>121.4423</longitude>
+    <inCity>上海</inCity>
+    <inDistrict>徐汇</inDistrict>
+    <address>徐汇区天钥桥路315号4楼(近南丹东路)</address>
+    <telNum_1>021-54246727</telNum_1>
+    <telNum_2>021-54242365</telNum_2>
+    <shopImgName>TASTY_tianyaoqiaolu.jpg</shopImgName>
+    <shopDetailInfo>“王品”旗下的品牌。环境依然布置得“蛮有情调”，适合“情侣约会”。套餐味道都“不错”。服务员“非常有耐心”，上菜、撤盘“及时”。不管是炮友、基友、还是闺密，不妨去“西堤”小浪漫一下吧。
+    </shopDetailInfo>
+</shop>
+    
+<shop id="2">
+    <shopName>钱柜KTV徐汇店</shopName>
+    <latitude>31.1863</latitude>
+    <longitude>121.4431</longitude>
+    <inCity>上海</inCity>
+    <inDistrict>徐汇</inDistrict>
+    <address>徐汇区天钥桥路580号星游城5-6楼(近零陵路)</address>
+    <telNum_1>021-63741111</telNum_1>
+    <telNum_2>021-61619888</telNum_2>
+    <shopImgName>qiangui_xuhui.jpg</shopImgName>
+    <shopDetailInfo>钱柜企业自1989年创立以来，钱柜企业以科技、娱乐、人性化元素，融入聚会需求、欢唱事业与顶级休闲场域，成为21世纪休闲流行趋势，创造出「Party World」的精神展现。  </shopDetailInfo>
+</shop>
+    
+<shop id="2">
+    <shopName>薇爱精品时尚酒店(吴中店)</shopName>
+    <latitude>31.185</latitude>
+    <longitude>121.397</longitude>
+    <inCity>上海</inCity>
+    <inDistrict>闵行</inDistrict>
+    <address>闵行区吴中路682弄2号金虹桥广场C座8楼(近虹许路)</address>
+    <telNum_1>021-54225199</telNum_1>
+    <telNum_2>021-63274260</telNum_2>
+    <shopImgName>weiai_wuzhong.jpg</shopImgName>
+    <shopDetailInfo>“蛮有创意”的主题酒店，“复古”的吊灯，顿觉“雅致”。每一间“各具特色”，尤其是“圆床房”，“情调十足”，把“浪漫”营造得“淋漓尽致”。有机会去“体验一下”，真的“很有感觉”哦.
+    </shopDetailInfo>
+</shop>
+
+
+
+
+
+
+
+
+
+
+
+
+</shops>

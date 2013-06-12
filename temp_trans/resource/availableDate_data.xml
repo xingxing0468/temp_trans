@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<dates>
+    
+<date id="0">
+    <type>0</type>
+    <shopID>0</shopID>
+    <dateName>炮友电影之旅: 大话西游</dateName>
+    <originPrice>120.0</originPrice>
+    <nowPrice>100.0</nowPrice>
+    <startTime>16:00:00</startTime>
+    <endTime>28:00:00</endTime>
+    <averageScore>4.999999</averageScore>
+    <scoreUserNum>320</scoreUserNum>
+    <canPrePay>YES</canPrePay>
+    <canOrder>YES</canOrder>
+    <canRefund>NO</canRefund>
+    <imageName>dahuaxiyou.jpg</imageName>
+    <detailInfo>在两人的浪漫晚餐后，该去哪里度过：大光明电影院为您准备了新年大片：大话西游</detailInfo>
+</date>
+<date id="1">
+    <type>0</type>
+    <shopID>0</shopID>
+    <dateName>基友电影之旅: 人在囧途之泰囧</dateName>
+    <originPrice>100.0</originPrice>
+    <nowPrice>80.0</nowPrice>
+    <startTime>19:00:00</startTime>
+    <endTime>21:00:00</endTime>
+    <averageScore>3.7459</averageScore>
+    <scoreUserNum>99</scoreUserNum>
+    <canPrePay>NO</canPrePay>
+    <canOrder>YES</canOrder>
+    <canRefund>NO</canRefund>
+    <imageName>renzaijiongtu.jpg</imageName>
+    <detailInfo>基友相逢何处去？前方左转大光明！今夜大光明为您准备的，人在囧途之太囧，绝对让基友情更深，搞基意更浓</detailInfo>
+</date>
+                    
+<date id="2">
+    <type>1</type>
+    <shopID>1</shopID>
+    <dateName>两人情侣牛排套餐</dateName>
+    <originPrice>300</originPrice>
+    <nowPrice>250</nowPrice>
+    <startTime>17:00:00</startTime>
+    <endTime>21:00:00</endTime>
+    <averageScore>2.56</averageScore>
+    <scoreUserNum>12</scoreUserNum>
+    <canPrePay>YES</canPrePay>
+    <canOrder>YES</canOrder>
+    <canRefund>YES</canRefund>
+    <imageName>niupaitaocan_TASTY.jpg</imageName>
+    <detailInfo>菲丽牛排*2;白巧克力慕斯*2;;酥皮蛤蜊汤*2;面包;指定软饮</detailInfo>
+</date>
+                            
+<date id="3">
+    <type>2</type>
+    <shopID>2</shopID>
+    <dateName>两人小包欢唱4小时(下午)</dateName>
+    <originPrice>800</originPrice>
+    <nowPrice>300</nowPrice>
+    <startTime>13:00:00</startTime>
+    <endTime>15:00:00</endTime>
+    <averageScore>1.2344536</averageScore>
+    <scoreUserNum>1</scoreUserNum>
+    <canPrePay>1</canPrePay>
+    <canOrder>1</canOrder>
+    <canRefund>0</canRefund>
+    <imageName>huanchang_qiangui.jpg</imageName>
+    <detailInfo>说到K歌，自然想到“钱柜”。环境在“量贩式KTV”里可称“第一”，大厅装点“华丽”，包房设施“完备”，气氛、灯光都“不错”。不管是基友搞基、炮友约会还是闺密谈情，钱柜的两人小包欢唱约会都能为您营造浪漫的气氛</detailInfo>
+</date>
+
+<date id="4">
+    <type>3</type>
+    <shopID>3</shopID>
+    <dateName>圆床与按摩浴缸的浪漫约会</dateName>
+    <originPrice>800</originPrice>
+    <nowPrice>680</nowPrice>
+    <averageScore>0</averageScore>
+    <scoreUserNum>0</scoreUserNum>
+    <canPrePay>1</canPrePay>
+    <canOrder>0</canOrder>
+    <canRefund>0</canRefund>
+    <imageName>yuanchuang_weiai.jpg</imageName>
+    <detailInfo>薇爱精品时尚酒店的特色圆床房，不仅环境舒适，更有按摩浴缸为您洗去一整天的疲劳。</detailInfo>
+</date>
+
+</dates>
+

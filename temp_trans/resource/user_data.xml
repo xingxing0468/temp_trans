@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<users>
+<user id = "0">
+    <name>zZED</name>
+    <head_img>zZED.jpg</head_img>
+    <sex>male</sex>
+</user>
+
+<user id = "1">
+    <name>CSEE</name>
+    <sex>female</sex>
+    <head_img>CSEE.jpg</head_img>
+    <location>
+        <latitude>37.0206410</latitude>
+        <longitude>-122.7889040</longitude>
+    </location>
+</user>
+
+
+<user id = "2">
+    <name>KANGSU</name>
+    <sex>male</sex>
+    <head_img>KANGSU.jpg</head_img>
+</user>
+    
+<user id = "3">
+    <name>宗师</name>
+    <sex>male</sex>
+    <head_img>ZONGSHI.jpg</head_img>
+</user>
+    
+<user id = "4">
+    <name>CJ</name>
+    <sex>male</sex>
+    <head_img>CJ.jpg</head_img>
+</user>
+    
+<user id = "5">
+    <name>ZHUZHU</name>
+    <sex>male</sex>
+    <head_img>ZHUSHENG.jpg</head_img>
+</user>
+
+<user id = "6">
+    <name>CHA</name>
+    <sex>male</sex>
+    <head_img>CHA.jpg</head_img>
+</user>
+
+<user id = "7">
+    <name>MOORBY</name>
+    <sex>male</sex>
+    <head_img>MOORBY.jpg</head_img>
+</user>
+    
+<user id = "8">
+    <name>FENG</name>
+    <sex>male</sex>
+    <head_img>FENG.jpg</head_img>
+</user>
+    
+<user id = "9">
+    <name>PANGZHI</name>
+    <sex>male</sex>
+    <head_img>PANGZHI.jpg</head_img>
+</user>
+
+<user id = "10">
+    <name>DAN</name>
+    <sex>male</sex>
+    <head_img>DAN.jpg</head_img>
+</user>
+
+</users>

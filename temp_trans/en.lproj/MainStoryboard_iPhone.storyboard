@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rs0-KQ-NDf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--People Nearby - 附近的好友-->
+        <scene sceneID="oj6-Xi-PjJ">
+            <objects>
+                <tableViewController id="bdF-Ic-dIY" customClass="peopleNearby" propertyAccessControl="none" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="附近的人 " id="m5D-6U-W2F"/>
+                    <navigationItem key="navigationItem" title="附近的好友" id="eVW-gl-W56">
+                        <barButtonItem key="leftBarButtonItem" title="筛选（全部）" id="rkl-Wl-4Cm"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mda-ZO-etG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="-164"/>
+        </scene>
+        <!--Navigation Controller - 附近的人-->
+        <scene sceneID="HEx-81-1ff">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="nVS-ke-87g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="附近的人" id="zXK-eZ-8Dd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nHV-bf-QKr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bdF-Ic-dIY" kind="relationship" relationship="rootViewController" id="XER-fR-DIa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4P-WT-tY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="-164"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CEp-tc-wtG">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="rs0-KQ-NDf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FaJ-Q7-vb8"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xI3-3a-QIc">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nVS-ke-87g" kind="relationship" relationship="viewControllers" id="ouC-N6-wER"/>
+                        <segue destination="ql6-xc-42s" kind="relationship" relationship="viewControllers" id="X6R-9q-qTv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0X-gU-Oz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="160"/>
+        </scene>
+        <!--Navigation Controller - 附近的约会-->
+        <scene sceneID="Um7-7G-3od">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ql6-xc-42s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="附近的约会" id="wfy-3A-aXv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sqV-Pv-eRz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="rootViewController" id="Q1p-ZL-o7Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ce7-6U-SfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="539"/>
+        </scene>
+        <!--Second View Controller - Second-->
+        <scene sceneID="13">
+            <objects>
+                <viewController title="Second" id="3" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="17">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pln-5I-1gq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="405" id="NMx-2i-IFV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="qqs-aG-7f1"/>
+                                    <outlet property="delegate" destination="3" id="gzj-vw-KMb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="22" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0q6-IA-e8m"/>
+                            <constraint firstItem="pln-5I-1gq" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="6qw-7g-EDY"/>
+                            <constraint firstItem="pln-5I-1gq" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="oFK-KL-YXe"/>
+                            <constraint firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pc3-9Y-W42"/>
+                            <constraint firstItem="22" firstAttribute="top" secondItem="17" secondAttribute="top" constant="14" id="xHH-Vw-CbY"/>
+                            <constraint firstItem="pln-5I-1gq" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="xcC-GF-QQh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="附近的约会" image="second" id="6"/>
+                    <navigationItem key="navigationItem" title="附近的约会" id="928-97-edQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="539"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="second" width="16" height="16"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+        <class className="peopleNearby" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/peopleNearby.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
