@@ -13,7 +13,7 @@
 #import "testNav.h"
 #import "AppDelegate.h"
 #import "EGORefreshTableHeaderView.h"
-@interface peopleNearby : UITableViewController<UITableViewDelegate,UITableViewDataSource,EGORefreshTableHeaderDelegate>
+@interface peopleNearby : UITableViewController<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,EGORefreshTableHeaderDelegate>
 {
     userData* localUser;
     

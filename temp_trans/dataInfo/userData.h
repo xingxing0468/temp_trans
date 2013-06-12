@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#define MALE 2
-#define FEMALE 1
-#define ALL_GENDER 0
+#define USERDATA_MALE 2
+#define USERDATA_FEMALE 1
+#define USERDATA_ALL_GENDER 0
 @interface userData : NSObject
 
 {

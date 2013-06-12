@@ -73,8 +73,8 @@ NSString* m_strCurrentElement;
     if([nowElement isEqualToString:@"head_img"]){  nowUserNode.head_img = string;}
     if([nowElement isEqualToString:@"sex"])
     {
-        if ([string isEqualToString:@"male"]) {nowUserNode.gender = MALE;}
-        if ([string isEqualToString:@"female"]) {nowUserNode.gender = FEMALE;}
+        if ([string isEqualToString:@"male"]) {nowUserNode.gender = USERDATA_MALE;}
+        if ([string isEqualToString:@"female"]) {nowUserNode.gender = USERDATA_FEMALE;}
     }
     if([nowElement isEqualToString:@"latitude"]){  nowUserNode.latitude = [string doubleValue];}
     if([nowElement isEqualToString:@"longitude"]){  nowUserNode.longitude = [string doubleValue];}
@@ -84,7 +84,7 @@ NSString* m_strCurrentElement;
 -(void) parser:(NSXMLParser*)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
     if([elementName isEqualToString:@"user"])
     {
-        if(selectedGender == ALL_GENDER || selectedGender == nowUserNode.gender)
+        if(selectedGender == USERDATA_ALL_GENDER || selectedGender == nowUserNode.gender)
         {
             [userList addObject:nowUserNode];
         }

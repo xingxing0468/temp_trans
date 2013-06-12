@@ -23,21 +23,32 @@ CLLocationManager *locmanager;
 NSInteger selectGender;
 NSInteger rowNum;
 
+
+#pragma mark 
+#pragma mark - UI Actions
 - (void) selectButtonAction{
-    if(selectGender == 2) selectGender = 0;
-    else {selectGender++;};
+    UIActionSheet *selectGenderSheet = [[UIActionSheet alloc] initWithTitle:@"筛选" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"全部",@"妹子",@"基友",nil];
+    [selectGenderSheet setActionSheetStyle:UIActionSheetStyleBlackOpaque];
+    [selectGenderSheet showInView:[UIApplication sharedApplication].keyWindow];
     
+    
+    return;
+}
 
-    [self performSelectorInBackground:@selector(refreshTableView) withObject:nil];
-    
-    //get location info, need to be optimized
-    [locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-    [locmanager startUpdatingLocation];
 
-    
+
+-(void) pushNewView
+{
+    userData* caller = [users objectAtIndex:(0)];
+    userData* receiver = [users objectAtIndex:2];
+    chatWinController *chatWin = [[chatWinController alloc] init];
+    [chatWin setCaller:caller];[chatWin setReceiver:receiver];
     
 }
 
+
+#pragma mark
+#pragma mark - view load and Unload
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -76,6 +87,35 @@ NSInteger rowNum;
     self.list = nil;
     
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark
+#pragma mark - actionSheet callbacks
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 3) { return; } //cancel button index
+    selectGender = buttonIndex;
+
+    
+    
+    [self performSelectorInBackground:@selector(refreshTableView) withObject:nil];
+    
+//    //get location info, need to be optimized
+//    [locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+//    [locmanager startUpdatingLocation];
+
+}
+
+
+
+#pragma mark
+#pragma mark - tableView callbacks
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -112,47 +152,38 @@ NSInteger rowNum;
     [cell.detailTextLabel setText:distanceStr];
     NSLog(@"%@  :%@",nowUser.name,nowUserLoc);
     
-    //NSLog((@"nowUser name: %@; location: %@",nowUser.name, nowUserLoc));
-    
-    
-    
-    //cell.textLabel.text = [users objectAtIndex:row];
-    
-    
-    
-    //    UILabel *detailLabel_1 = [[UILabel alloc] initWithFrame:CGRectMake(bounds.size.width/2,bounds.size.height/2,bounds.size.width/2, bounds.size.height/4)];
-    //    UILabel *detailLabel_2 = [[UILabel alloc] initWithFrame:CGRectMake(bounds.size.width/2,bounds.size.height*3/4,bounds.size.width/2, bounds.size.height/4)];
-    //
-    //    UIImageView *rightImg = [[UIImageView alloc] initWithFrame:CGRectMake(bounds.size.width-45,0,40, bounds.size.height)];
-    //    [rightImg setImage: [UIImage imageNamed:@"ZHUSHENG.jpg"]];
-    //
-    //
-    //
-    //    [detailLabel_1 setText:@"xxxxxxxx"];
-    //    [detailLabel_2 setText:@"vvvvvvvv"];
-    //
-    //    [detailLabel_1 setFont:[UIFont fontWithName:@"Arial-BoldItalicMT" size:12]];
-    //    [detailLabel_2 setFont:[UIFont fontWithName:@"Arial-BoldItalicMT" size:12]];
-    //
-    //    [cell.contentView addSubview:detailLabel_1];
-    //    [cell.contentView addSubview:detailLabel_2];
-    //    [cell.contentView addSubview:rightImg];
-    
-    
-    //    //change layout
-    //    CGRect bounds = cell.bounds;
-    //    [cell.imageView setFrame:CGRectMake(bounds.size.width*3/4,0, bounds.size.width/4, bounds.               size.height)];
-    //    [cell.textLabel setFrame:CGRectMake(0,0, bounds.size.width*3/4, bounds.size.height/2)];
-    //    [cell.detailTextLabel setFrame:CGRectMake(0,bounds.size.height/2, bounds.size.width*3/4,
-    //                                              bounds.size.height/2)];
-    
-    
-    
-    
     return cell;
     
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    userData* caller = [users objectAtIndex:(0)];
+    userData* receiver = [users objectAtIndex:[indexPath row]];
+    chatWinController *chatWin = [[chatWinController alloc] init:caller receiver:receiver];
+    [self.tabBarController.tabBar setHidden:YES];
+    rowNum = [indexPath row];
+    
+    [self setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:chatWin animated:YES];
+    //[self.navigationController pushViewController:chatWin animated:YES];
+    //[self performSelectorOnMainThread:@selector(pushNewView) withObject:nil waitUntilDone:YES];
+   
+    [self setHidesBottomBarWhenPushed:NO];
+    
+    return;
+}
+
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [users count];
+}
+
+
+
+#pragma mark
+#pragma mark - other methods
 -(void) getUsersFromXMLFile{
     
     userDataParser_xml *userXMLFile = [userDataParser_xml alloc];
@@ -166,7 +197,7 @@ NSInteger rowNum;
     [locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
     [locmanager startUpdatingLocation];
     NSLog(@"current: %@",[locmanager location]);
-
+    
 }
 
 
@@ -182,15 +213,15 @@ NSInteger rowNum;
     NSString *navTitle = @"";
     NSString *selectButtonTitle = @"";
     switch (selectGender) {
-        case ALL_GENDER:
+        case USERDATA_ALL_GENDER:
             selectButtonTitle = @"筛选（全部）";
             navTitle = @"附近的好友";
             break;
-        case FEMALE:
+        case USERDATA_FEMALE:
             selectButtonTitle = @"筛选（妹子）";
             navTitle = @"附近的妹子";
             break;
-        case MALE:
+        case USERDATA_MALE:
             selectButtonTitle = @"筛选（基友）";
             navTitle = @"附近的基友";
             break;
@@ -201,7 +232,7 @@ NSInteger rowNum;
 
 -(void) getUsers_lock{
     long i =0;
-   // while(i<400000000){i++;}
+    // while(i<400000000){i++;}
     userDataParser_xml *userXMLFile = [userDataParser_xml alloc];
     userXMLFile.selectedGender = selectGender;
     users = [userXMLFile get_userData:@"user_data"];
@@ -216,47 +247,6 @@ NSInteger rowNum;
     
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    userData* caller = [users objectAtIndex:(0)];
-    userData* receiver = [users objectAtIndex:[indexPath row]];
-    
-    
-    chatWinController *chatWin = [[chatWinController alloc] init:caller receiver:receiver];
-
-
-    
-    [self.tabBarController.tabBar setHidden:YES];
-    //testNav* nav = [[testNav alloc] init];
-    rowNum = [indexPath row];
-    
-    [self setHidesBottomBarWhenPushed:YES];
-    [self.navigationController pushViewController:chatWin animated:YES];
-    //[self.navigationController pushViewController:chatWin animated:YES];
-    //[self performSelectorOnMainThread:@selector(pushNewView) withObject:nil waitUntilDone:YES];
-   
-    [self setHidesBottomBarWhenPushed:NO];
-    
-    return;
-}
-
--(void) pushNewView
-{
-    userData* caller = [users objectAtIndex:(0)];
-    userData* receiver = [users objectAtIndex:2];
-    chatWinController *chatWin = [[chatWinController alloc] init];
-    [chatWin setCaller:caller];[chatWin setReceiver:receiver];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [users count];
-}
 
 #pragma mark –
 #pragma mark Data Source Loading / Reloading Methods  
